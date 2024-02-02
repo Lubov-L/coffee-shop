@@ -39,8 +39,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: local
       MYSQL_DATABASE: coffee-shop
-      MYSQL_USER: laravel
-      MYSQL_PASSWORD: laravel
+      MYSQL_USER: coffee
+      MYSQL_PASSWORD: shop
     networks:
       - web-network-coffee-shop
 
