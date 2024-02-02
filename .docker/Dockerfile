@@ -22,13 +22,14 @@ RUN apt-get update && apt-get install -y \
     vim nano \
     zip unzip \
     git \
-    curl
+    curl \
+    libzip-dev libexif-dev
 
 # Подключение xdebug
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
 
-RUN docker-php-ext-install opcache
+RUN docker-php-ext-install opcache zip exif
 
 # Подключение redis
 RUN pecl install redis \
