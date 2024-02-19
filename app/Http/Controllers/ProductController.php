@@ -6,7 +6,6 @@ use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use Illuminate\Http\JsonResponse;
 use Illuminate\View\View;
-use Symfony\Component\HttpFoundation\Response as Code;
 
 class ProductController extends Controller
 {
@@ -22,14 +21,8 @@ class ProductController extends Controller
         return response()->json(['success' => true, 'message' => 'Product created']);
     }
 
-    public function show(int $id): JsonResponse
+    public function show(Product $product): JsonResponse
     {
-        $product = Product::query()->findOrFail($id);
-
-        if (!$product) {
-            return response()->json(['success' => false, 'message' => 'Product not found'], Code::HTTP_NOT_FOUND);
-        }
-
         return response()->json(['product' => $product]);
     }
 
@@ -40,14 +33,8 @@ class ProductController extends Controller
         return response()->json(['success' => true, 'message' => 'Product updated']);
     }
 
-    public function destroy(int $id): JsonResponse
+    public function destroy(Product $product): JsonResponse
     {
-        $product = Product::query()->findOrFail($id);
-
-        if (!$product) {
-            return response()->json(['success' => false, 'message' => 'Product not found'], Code::HTTP_NOT_FOUND);
-        }
-
         $product->delete();
 
         return response()->json(['success' => true, 'message' => 'Product deleted']);
