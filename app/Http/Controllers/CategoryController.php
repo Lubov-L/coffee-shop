@@ -13,7 +13,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        return view('layouts.category', compact($categories));
+        return view('admin.categories', compact('categories'));
     }
 
     public function store(CategoryRequest $request): JsonResponse

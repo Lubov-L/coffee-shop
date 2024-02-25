@@ -13,7 +13,7 @@ class UserController extends Controller
     {
         $users = User::all();
 
-        return view('layouts.users', compact($users));
+        return view('admin.users', compact('users'));
     }
 
     public function store(UserRequest $request): JsonResponse
@@ -23,9 +23,9 @@ class UserController extends Controller
         return response()->json(['success' => true, 'message' => 'User created']);
     }
 
-    public function show(User $user): JsonResponse
+    public function show(User $user): View
     {
-        return response()->json(['user' => $user]);
+        return view('admin.user', compact('user'));
     }
 
     public function update(UserRequest $request, User $user): JsonResponse

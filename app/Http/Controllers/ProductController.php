@@ -11,7 +11,9 @@ class ProductController extends Controller
 {
     public function index(): View
     {
-        return view('layouts.product');
+        $products = Product::all();
+
+        return view('admin.products', compact('products'));
     }
 
     public function store(ProductRequest $request): JsonResponse

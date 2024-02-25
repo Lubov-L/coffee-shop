@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
-use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
 use MoonShine\Menu\MenuItem;
 use MoonShine\Resources\MoonShineUserResource;
@@ -37,8 +36,12 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                ),
             ]),
 
-            MenuItem::make('Documentation', 'https://moonshine-laravel.com')
+            MenuItem::make('Users', '/users')
                ->badge(fn() => 'Check'),
+            MenuItem::make('Products', '/products')
+                ->badge(fn() => 'Check'),
+            MenuItem::make('Categories', '/categories')
+                ->badge(fn() => 'Check'),
         ];
     }
 

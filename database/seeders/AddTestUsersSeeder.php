@@ -11,17 +11,17 @@ class AddTestUsersSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
+                'id' => 1,
                 'name' => 'admin',
                 'email' => 'admin@mail.com',
                 'password' => 'admin',
-                'created_at' => now(),
                 'role_id' => 1
             ],
             [
+                'id' => 2,
                 'name' => 'user',
                 'email' => 'user@mail.com',
                 'password' => 'user',
-                'created_at' => now(),
                 'role_id' => 2
             ]
         ]);
