@@ -6,3 +6,44 @@ body {
     background-position: center;
     background-color: #ffffff;
 }
+
+.wrapper {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1300px;
+    padding: 20px 10px;
+}
+
+.link {
+    color: white;
+    margin-right: 40px;
+    text-decoration: none;
+}
+
+.link:last-child {
+    margin-right: 0;
+}
+
+.catalog-link {
+    border: 1px solid white;
+    color: white;
+    margin-top: 20px;
+    padding: 20px 50px;
+}
+
+.catalog-link:hover {
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+}
