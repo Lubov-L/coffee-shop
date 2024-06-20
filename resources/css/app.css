@@ -36,9 +36,14 @@ body {
 }
 
 .catalog-link {
-    background-color: #ffffff;
-    color: black;
+    border: 1px solid white;
+    color: white;
     margin-top: 20px;
     padding: 20px 50px;
-    border-radius: 10px;
+}
+
+.catalog-link:hover {
+    background-color: white;
+    color: black;
+    transition: 0.5s;
 }
